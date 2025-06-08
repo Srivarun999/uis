@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+import { componentTagger } from 'lovable-tagger'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -20,8 +20,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: '.output', // Changed to match Vercel's expected directory
-    chunkSizeWarningLimit: 1000, // Increase chunk size limit
+    outDir: '.output',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -31,4 +31,4 @@ export default defineConfig(({ mode }) => ({
       }
     }
   }
-}));
+}))
