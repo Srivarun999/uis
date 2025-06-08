@@ -1,3 +1,5 @@
+import seedrandom from 'seedrandom';
+
 // K-means clustering implementation
 export const kMeansSegmentation = (imageData: ImageData, k: number): {
   imageData: ImageData;
@@ -17,9 +19,10 @@ export const kMeansSegmentation = (imageData: ImageData, k: number): {
   }
 
   // Initialize centroids randomly
+  const rng = seedrandom('pixel-segmentation-seed-123');
   const centroids: number[][] = [];
   for (let i = 0; i < k; i++) {
-    const randomPixel = pixels[Math.floor(Math.random() * pixels.length)];
+    const randomPixel = pixels[Math.floor(rng() * pixels.length)];
     centroids.push([...randomPixel]);
   }
 
